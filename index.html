@@ -1,0 +1,1661 @@
+<html>
+<head>
+    <title>Hotel page</title>
+    <meta lang="en">
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+  <style>
+    body {
+      padding: 25px;
+      /*background: linear-gradient(to right, #00aaff, #00ff6c, #056890);*/
+      background-color: #f4f5f6;
+      color: #333333;
+      font-size: 25px;
+      font-family: monospace;
+      
+    }
+    .dark-mode {
+      background-color: #333333;
+      color: #f7f7f7;
+    }
+
+
+
+
+    * {
+      box-sizing: border-box;
+    }
+    /* Create two columns/boxes that floats next to each other */
+    nav {
+      float: right;
+      width: 30%;
+      height: auto; /* only for demonstration, should be removed */
+      padding: 20px;
+      color: #333333;
+
+    }
+
+
+
+
+    
+    article {
+      float: left;
+      padding: 20px;
+      width: 70%;
+      height: auto; /* only for demonstration, should be removed */
+      color: #333333;
+    }
+    
+    /* Clear floats after the columns */
+    section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    
+    
+    /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+    @media (max-width: 600px) {
+      nav, article {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+
+    </style>
+    
+    <style>
+      #HotelPage {
+        width: 100%;
+        padding: 50px 20px;
+        text-align: center;
+        background-color: white;
+        color: black;
+        margin-top: 20px;
+        border-radius: 20px;
+        
+        
+      }
+      
+      #Photos {
+        width: 100%;
+        padding: 50px 0;
+        text-align: center;
+        background-color: white;
+        color: black;
+        margin-top: 20px;
+        border-radius: 20px;
+      }
+      #Booking {
+        width: 100%;
+        padding: 50px 30px;
+        text-align: center;
+        background-color: white;
+        color: black;
+        margin-top: 20px;
+        border-radius: 20px;
+      }
+      </style>
+    
+
+
+
+
+  <style>
+    #overlay {
+      position: fixed;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 2;
+      cursor: pointer;
+    }
+    
+    #text{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 50px;
+      color: white;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+    }
+    </style>
+<script>
+  function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }
+  </script>
+
+
+
+  </head>
+
+
+
+
+
+
+
+
+  <body>
+    <div style="position: absolute; right: 30;">
+      <button onclick="darkFunction()" style="background-image: url('dark.png'); padding: 20px 20px; border-radius: 12px;">
+      </button></div>
+    <div>
+        <div id="overlay" onclick="off()">
+          <div id="text">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.5185462082272!2d31.245241485556534!3d30.050667425234927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145840be49155549%3A0xab4329139850e941!2sTHE%20LOCATION%20Hotel!5e0!3m2!1sar!2sar!4v1610825161431!5m2!1sar!2sar" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        
+        </div>
+        </div>
+        
+        <div>
+          <header>
+          <h3><b>location Hotel</b> &nbsp;&nbsp;&nbsp;&nbsp;
+          </header>
+        </div> </h3>
+      <hr>
+    </div>
+    <div>
+
+    </div>
+    <!--function dark-->
+      <script>
+      function darkFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+      }
+      </script>
+          <!--function dark-->
+          <style>
+            .button {
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.button1 {
+  background-color: white; 
+  color: black; 
+}
+
+.button1:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button3 {
+  background-color: white; 
+  color: black; 
+}
+.button3:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+          </style>
+
+
+
+
+
+          <!--
+          <script>function plusOne() {
+            var count = document.getElementById('count');
+          
+            number++;
+            count.innerHTML = number;
+          }
+          var number = 1;
+          function minuseone() {
+            var count = document.getElementById('count');
+          
+            number--;
+            count.innerHTML = number;
+          }
+          var number = 1;
+
+
+
+
+          function pplus() {
+            var ehseb = document.getElementById('ehseb');
+          
+            raqam++;
+            ehseb.innerHTML = raqam;
+          }
+          var raqam = 1;
+          function mminus() {
+            var ehseb = document.getElementById('ehseb');
+          
+            raqam--;
+            ehseb.innerHTML = raqam;
+          }
+          var raqam = 1;
+
+          </script>
+          <div data-ng-app="" data-ng-init="rooms=1;days=1">
+          <table><tr><td>
+          <table border="0" style=" font-size: 30; border-radius: 12px; background-color: rgb(0,0,0);">
+            <tr ><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td width="50">
+              <div><center>
+              <button style="background-color: rgb(59, 236, 59); border: 0; border-radius: 50%; color: white; " onclick="plusOne()" data-operation>
+                <font size="4">+</font>
+              </button></center>
+            <div></td></tr>
+
+
+            <tr><td></td><td></td><td>
+            <div>
+              <span id="count" style="color: white;">1</span>
+            </div>
+            </td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td width="50">
+              <center><button style="background-color: red; border: 0; border-radius: 50%; color: white;" onclick="minuseone()">
+                <font size="4">-</font>
+              </button></center></td></tr>
+            </div>
+            </div>
+          
+          </table></td>
+
+          <td>
+          <table border="0" style=" font-size: 30; border-radius: 12px; background-color: rgb(0,0,0);">
+            <tr ><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td width="50">
+              <div><center>
+              <button style="background-color: rgb(59, 236, 59); border: 0; border-radius: 50%; color: white; " onclick="pplus()">
+                <font size="4">+</font>
+              </button></center>
+            <div></td></tr>
+
+
+            <tr><td></td><td></td><td>
+            <div>
+              <span id="ehseb" style="color: white;">1</span>
+            </div>
+            </td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td width="50">
+              <center><button style="background-color: red; border: 0; border-radius: 50%; color: white;" onclick="mminus()">
+                <font size="4">-</font>
+              </button></center></td></tr>
+            </div>
+            </div>
+          
+          </table></td>
+        <td width="600" align="right"><input type="date"></td></tr>
+          <tr>
+            <td><b>NO.Rooms</b></td>
+            <td><b>NO.Days</b></td>
+            <td width="600" align="right"><b>The Day From :</b></td>
+          </tr>
+          <tr>
+            
+            
+            
+            اعمل function بال JS يعمل الحساب
+
+
+            <td><p><b> Price= </b> {{(rooms * 20)* days}}</p>
+            </td>
+          </tr>
+          
+        </table></div> ---->
+
+        <!--الشغل هنــــــــــــــــــــــــــــــــا-->
+        <!--
+        المفروض اربط الhotel page مع باقي الحبشتكنات الstars&rate&opinion
+        تمام كدا 
+        اشطا
+        اللي بعده
+        اربط الاخت Photos بدال الحبشتكنات اللي فوق علشان مش فاضي اعيدكم ويتغيروا
+        فله كدا
+        اللي afteroh
+        اللي بعده مش هعيد
+        ال more details نفس الموضوع بس بدل ما السهل يمين نعلمه الانحراف (المعياري لاسمح الله)
+        ولونه يتخير زي الاخوات الفاضلات اللي فوق هي والاخت services
+        الباقي دا عند ام جلمبو
+        اخر حاجه اضغط للتكبير دا بعدما انام ان شاء الله ابقا افوقلك
+        
+
+
+
+
+
+        -->
+        <div>                        
+          <center>
+            <table width="30%" height="20" bgcolor="black" border="0" style="border-radius: 12px;">
+              <tr>
+              <th background="balck.jpg">
+              <button class="button button1" style="margin-right: 10; border-radius: 12px; font-weight: bold; height: 30;; border: 0cm; " onclick="hpFunction()">Hotel Page</button>
+              <button class="button button2" style="margin-right: 10; border-radius: 12px; font-weight: bold; height: 30;; border: 0cm; " onclick="pFunction()">Photos</button>
+              <button class="button button3" style="margin-right: 5; border-radius: 12px; font-weight: bold; height: 30;; border: 0cm; " onclick="bFunction()">Booking</button>
+</th></tr>
+            </table>
+          </center>
+          <section>
+            <nav style="margin-top: 43px; background-color: white; border-radius: 12px;" class="navbar navbar-light bg-light">
+
+              <div>
+                <strong> Map:-</strong>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.5185462082272!2d31.245241485556534!3d30.050667425234927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145840be49155549%3A0xab4329139850e941!2sTHE%20LOCATION%20Hotel!5e0!3m2!1sar!2sar!4v1610825161431!5m2!1sar!2sar" width="300" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <hr style="background-color: black; height: 4;">
+            <div style="direction: rtl;">
+              معلومات حول الافطار
+            </div><br>
+            <div style="direction: rtl;">
+              - كونتيننتال، و بوفيه
+            </div>
+            <hr style="background-color: black; height: 4;">
+            <div style="direction: rtl;">يتوفر موقف للسيارات
+            </div>
+            <hr style="background-color: black; height: 4;">
+            <div style="direction: rtl;">
+            عن الحجز
+            </div><br>
+            <style>
+         .sb-custom-select select {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 8px;
+    height: auto;
+    color: #fff;
+    background: #333;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+            </style>
+            <div><table style="font-size: 15;"><tr><td>
+            <div class="sb-custom-select">
+    <select name="group_adults" aria-label="عدد الأشخاص البالغين" id="group_adults" data-group-adults-count="">
+        <option value="1">
+          شخص بالغ واحد
+        </option>
+        <option value="2" selected="">
+          شخصان بالغان
+        </option>
+        <option value="3">
+          3 أشخاص بالغين
+        </option>
+        <option value="4">
+          4 أشخاص بالغين
+        </option>
+        <option value="5">
+          5 أشخاص بالغين
+        </option>
+        <option value="6">
+          6 أشخاص بالغين
+        </option>
+    </select>
+  </div></td><td>
+  <div class="sb-custom-select">
+    <select name="group_children" aria-label="عدد الأطفال" id="group_children" data-group-children-count="">
+        <option value="0" selected="">
+            بدون أطفال
+        </option>
+        <option value="1">
+            طفل واحد
+        </option>
+        <option value="2">
+            طفلان
+        </option>
+        <option value="3">
+            3 أطفال
+        </option>
+        <option value="4">
+            4 أطفال
+        </option>
+        <option value="5">
+            5 أطفال
+        </option>
+        <option value="6">
+            6 أطفال
+        </option>
+    </select>
+  </div></td><td>
+      <div class="sb-custom-select">
+      <select name="no_rooms" id="no_rooms" data-group-rooms-count="" aria-label="عدد الغرف">
+              <option value="1" selected="">
+                  غرفة واحدة
+              </option>
+              <option value="2">
+                  غرفتان
+              </option>
+              <option value="3">
+                  3 غرف
+              </option>
+              <option value="4">
+                  4 غرف
+              </option>
+              <option value="5">
+                  5 غرف
+              </option>
+              <option value="6">
+                  6 غرف
+              </option>
+              <option value="7">
+                  7 غرف
+              </option>
+              <option value="8">
+                  8 غرف
+              </option>
+              <option value="9">
+                  9 غرف
+              </option>
+              <option value="10">
+                  10 غرف
+              </option>
+              <option value="11">
+                  11 غرفة
+              </option>
+              <option value="12">
+                  12 غرفة
+              </option>
+      </select>
+      </div></td>
+    </tr></table></div>
+              </nav>
+            <article>
+
+            <div id="HotelPage" style="text-align: center; color: black;"><table border="0" style="direction: rtl;">
+              <div>
+            <b>The location Hotel</b>&nbsp;&nbsp;
+
+
+            <style>
+
+
+
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav button {
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+
+
+
+
+
+              body {
+                font-family: "Lato", sans-serif;
+              }
+              
+              .sidenav {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+              }
+              
+              
+              
+              .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                font-size: 36px;
+                color: #818181;
+              }
+              .sidenav .closebtn:hover {
+                color: #f1f1f1;
+              }
+              
+              
+              @media screen and (max-height: 450px) {
+                .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
+              }
+              </style>
+          
+              <div id="mySidenav" class="sidenav" style="background-color: white; color: black;">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          
+          
+              <div><font size="5"><p>&nbsp;&nbsp;&nbsp;
+                  مرافق متوفرة في The location Hotel
+                  </p>
+                  </div><hr>&nbsp;&nbsp;&nbsp;
+                  أكثر المرافق رواجًا ✔
+                  <br><pre><hr>
+                  خدمة نقل المطار 
+                  خدمة الغرف 
+                  غرف لغير المدخنين
+                  يتوفر الواي فاي في جميع المناطق
+                  واي فاي مجاني
+                  غرف عائلية
+                  آلة صنع الشاي
+                  القهوة في جميع الغرف إفطار
+                  حمّام
+                  ورق حمام
+                  مناشف
+                  شطافة
+                  مناشف / بياضات (بتكلفة إضافية)
+                  حوض استحمام أو دش
+                  نعال
+                  حمّام خاص
+                  مرحاض
+                  لوازم استحمام مجانية
+                  رداء حمّام
+                  مجفف شعر
+                  دش
+                  <hr>
+                  غرفة نوم ✔<hr>
+                  بياضات أسرّة
+                  خزانة
+                  <hr>
+                  أنشطة خارجية ✔<hr>
+                  مدفأة خارجية
+                  منطقة تنزه
+                  مفروشات خارجية
+                  منطقة طعام خارجية
+                  أثاث خارجي
+                  تراس التشمس
+                  <hr>
+                  مطبخ ✔<hr>
+                  مطبخ مشترك
+                  كرسي مرتفع للأطفال
+                  طاولة طعام
+                  أدوات تنظيف
+                  محمصة خبز
+                  موقد
+                  فرن
+                  مجفف ملابس
+                  أدوات مطبخ
+                  غلاية كهربائية
+                  مطبخ
+                  غسالة ملابس
+                  غسالة صحون
+                  ميكروويف
+                  ثلاجة
+                  مطبخ صغير
+                  <hr>
+                  مرافق الغرفة ✔<hr>
+                  مقبس بجانب السرير
+                  منشر للغسيل
+                  حمّالة ملابس
+                   <hr>
+                  الخدمات والإضافات ✔<hr>
+                  تذاكر لزيارة المعالم السياحية أو العروض رسوم إضافية
+                  <hr>
+                  الحيوانات الأليفة ✖<hr>
+                  <b>الحيوانات الأليفة غير مسموح بها</b>
+                  
+                  <hr>
+                  منطقة معيشة ✔<hr>
+                  منطقة لتناول الطعام
+                  أريكة
+                  مدفأة
+                  منطقة جلوس
+                  مكتب
+                  <hr>
+                  ميديا وتكنولوجيا ✔<hr>
+                  تلفزيون بشاشة مسطحة
+                  قنوات فضائية
+                  فيديو
+                  راديو
+                  هاتف
+                  تلفزيون
+                  <hr>
+                  مأكولات ومشروبات ✔<hr>
+                  شوكولاته أو بسكويت رسوم إضافية
+                  فواكه رسوم إضافية
+                  زجاجة مياه رسوم إضافية
+                  قوائم النظام الغذائي الخاص (عند الطلب)
+                  بار الوجبات الخفيفة
+                  خدمة فطور في الغرفة
+                  ميني بار
+                  آلة صنع الشاي / القهوة
+                  <hr>
+                  إنترنت ✔<hr>
+                  مجاناً! تتوفر خدمة الواي فاي (الإنترنت اللاسلكي)،في جميع أنحاء الفندق مجاناً.
+                  
+                  <hr>
+                  موقف سيارات ✔<hr>
+                  يتوفر موقف عام للسيارات في مكان قريب من الفندق (لا يُطلب الحجز المسبق) وتبلغ تكلفته US$1للساعة الواحدة .
+                  
+                  موقف للسيارات ملائم لذوي الاحتياجات الخاصة
+                  مرآب للسيارات
+                  موقف للسيارات في الشارع
+                  موقف آمن للسيارات
+                  <hr>
+                  وسائل نقل ✔<hr>
+                  النقل إلى المطار رسوم إضافية
+                  النقل من المطار رسوم إضافية
+                  تذاكر وسائل المواصلات العامة رسوم إضافية
+                  <hr>
+                  خدمات ✔<hr>
+                  صالة مشتركة / منطقة تلفزيون
+                  خزائن
+                  <hr>
+                  خدمات استقبال ✔<hr>
+                  تسجيل وصول / مغادرة خاص
+                  خدمة كونسيرج
+                  صراف آلي في الموقع
+                  تخزين الأمتعة
+                  خدمة حجز التذاكر
+                  مكتب الجولات السياحية
+                  تحويل العملات
+                  مكتب استقبال على مدار 24 ساعة
+                  <hr>
+                  خدمات عائلية وترفيهية ✔<hr>
+                  شبكات تلفزيون للأطفال
+                  بوابات حماية للأطفال
+                  ألعاب لوحية/ألغاز
+                  بوابات سلامة للأطفال
+                  ألعاب لوحية / ألغاز
+                  مقابس محمية للأطفال
+                  <hr>
+                  خدمات تنظيف ✔<hr>
+                  خدمة تنظيف يومية
+                  ضاغط للسراويل
+                  خدمة كي الملابس رسوم إضافية
+                  التنظيف الجاف للملابس رسوم إضافية 
+                  مرافق غسيل الملابس رسوم إضافية
+                  <hr>
+                  مرافق أعمال ✔<hr>
+                  فاكس / نسخ مستندات
+                  <hr>
+                  الأمان والحماية ✔<hr>
+                  طفايات حريق
+                  كاميرات دوائر تلفزيونية مغلقة في المناطق المشتركة
+                  أجهزة إنذار الدخان
+                  جرس الإنذار
+                  أمن على مدار الساعة
+                  صندوق الأمانات
+                  <hr>
+                  عام ✔<hr>
+                  خدمة نقل
+                  خدمة توصيل البقالة رسوم إضافية
+                  خدمة نقل من وإلى المطار (رسوم إضافية)
+                  خدمة نقل ذهاباً وإياباً (رسوم إضافية)
+                  بطانية كهربائية
+                  مضادة للحساسية
+                  مكان مخصص للتدخين
+                  تكييف
+                  ممنوع التدخين في كل الأماكن
+                  غرفة خالية من مسببات الحساسية
+                  ناموسية
+                  إمكانية الدخول إلى الصالة التنفيذية
+                  خدمة إيقاظ
+                  تدفئة
+                  بلاط / أرضية رخامية
+                  عازل للصوت
+                  استئجار سيارات
+                  غرف عازلة للصوت
+                  مصعد
+                  تدفئة
+                  غرف عائلية
+                  مرافق كي الملابس
+                  مكواة بناطيل
+                  غرف لغير المدخنين
+                  مكواة
+                  صحف
+                  خدمة الإيقاظ / ساعة منبهة
+                  تكييف
+                  خدمة الغرف
+                  <hr>
+                  سهولة الوصول ✔<hr>
+                  يمكن الوصول إلى الطوابق العليا عن طريق السلالم فقط
+                  يمكن الوصول إلى الطوابق العلوية عن طريق المصعد
+                   <hr>
+                  لغات التحدث ✔<hr>
+                  العربية
+                  الألمانية
+                  الإنجليزية
+                  الروسية
+          
+          
+              </pre>
+          </font>
+          
+          </div>
+          <div style="background-color: #2a82b1;">
+          &nbsp;&nbsp;
+          <button onclick="on()" style="font-size: 18px; height: 30px; border: 0px; background-color: #008CBA; color: white;"><b> &#8629; اضغط لفتح الخريطة</b></button>
+          <button onclick="openNav()" style="font-size: 18px; height: 30px; border: 0px; background-color: #008CBA; color: white;"><b>&#9776; المرافق</b></button>
+        </div>
+          <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "auto";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+            
+            
+            <style>
+* {
+  box-sizing: border-box;
+}
+
+.zoom {
+  transition: transform .2s;
+
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
+            </style>
+            
+            
+            <hr style="height: 6; background-color: black;">
+            <img style="height: 350px; width: 350px;" class="zoom" src="thelocationhotel.jpg">
+            <img style="height: 350px; width: 350px;" class="zoom" src="thelocationhotel3.jpg"><br><tr><td>
+              <font size="5" color="black">
+  يقع فندق الموقع في القاهرة على بعد 1.4 كم من ميدان التحرير،  ويوفر إطلالات على المدينة. تشمل المرافق المتوفرة في مكان الإقامة هذا خدمة الغرف وصالة مشتركة،
+  بالإضافة إلى خدمة الواي فاي المجانية في جميع أنحاء مكان الإقامة.
+  يوفر مكان الإقامة مكتب استقبال يعمل على مدار 24 ساعة ومطبخ مشترك وخدمة تحويل العملات للضيوف.
+
+  تم تجهيز غرف الضيوف في الفندق مع تكييف ومنطقة جلوس وتلفزيون بشاشة مسطحة مع قنوات فضائية
+  ومطبخ ومنطقة لتناول الطعام وحمام خاص مع مجفف شعر وبيديت ودش.
+  تحتوي جميع غرف الضيوف على مكتب وغلاية.
+
+  يقدم الفندق وجبة إفطار كونتيننتال أو بوفيه إفطار.
+
+  ويوفر مكان الإقامة تراس للتشمس.
+
+  يقع خان الخليلي على بعد 1.9 كم من الفندق، في حين يقع جامع الأزهر على بعد 1.9 كم.
+  ويعتبر مطار القاهرة الدولي المطار الأقرب للفندق حيث يقع على بعد 16 كم منه
+  ويوفر مكان الإقامة خدمة نقل المطار مقابل تكلفة إضافية.
+
+  هذه المنطقة المفضلة من القاهرة لدى ضيوفنا بناءً على التقييمات المستقلة.
+
+
+</font>
+</td></tr></table></div>
+            <div id="Photos" hidden>
+              This is hotel photos<br><br>
+              <button id="myBtn" style="border: 0; font-size: 20px; background: #008CBA; color: azure; border-radius: 12px;">اضغط للتكبير</button>
+              <br><br>
+              <img style="width: 40%;" src="thelocationhotel.jpg">
+              <img style="width: 40%;" src="thelocationhotel1.jpg">
+              <img style="width: 40%;" src="thelocationhotel2.jpg">
+              <img style="width: 40%;" src="thelocationhotel3.jpg">
+              <img style="width: 40%;" src="thelocationhotel4.jpg">
+              <img style="width: 40%;" src="thelocationhotel5.jpg">
+              <img style="width: 40%;" src="thelocationhotel6.jpg">
+
+
+              <!--كـــــــــــــل الصوره هنا بس بحجم صغير شويه-->
+              <br><br>
+              <div id="myModal" class="modal"><center>
+              
+                <div class="modal-content" >        
+      
+                  <span class="close">&times;</span>
+      
+                  <div class="modal-body">
+                    <style>
+                      #photo1 {
+                        width: 100%;
+                        padding: 50px 0;
+                        text-align: center;
+                        margin-top: 20px;
+                      }
+                      #photo2 {
+                        width: 100%;
+                        padding: 50px 0;
+                        text-align: center;
+                        margin-top: 20px;
+                      }
+                      #photo3 {
+                        width: 100%;
+                        padding: 50px 0;
+                        text-align: center;
+                        margin-top: 20px;
+                      }
+                      #photo4 {
+                        width: 100%;
+                        padding: 50px 0;
+                        text-align: center;
+                        margin-top: 20px;
+                      }
+                      #photo5 {
+                        width: 100%;
+                        padding: 50px 0;
+                        text-align: center;
+                        margin-top: 20px;
+                      }
+                      #photo6 {
+                        width: 100%;
+                        padding: 50px 0;
+                        text-align: center;
+                        margin-top: 20px;
+                      }
+                      #photo7 {
+                        width: 100%;
+                        padding: 50px 0;
+                        text-align: center;
+                        margin-top: 20px;
+                      }
+                      </style>
+
+<center>
+  <b>Some photos from The location Hotel</b>
+</center>
+<div id="photo1">
+  <img style="width: 70%;" class="zoom" src="thelocationhotel.jpg">
+  </div>
+  <div id="photo2" hidden>
+  <img style="width: 70%;" class="zoom" src="thelocationhotel1.jpg">
+  </div>
+  <div id="photo3" hidden>
+  <img style="width: 70%;" class="zoom" src="thelocationhotel2.jpg">
+  </div>
+  <div id="photo4" hidden>
+  <img style="width: 70%;" class="zoom" src="thelocationhotel3.jpg">
+  </div>
+  <div id="photo5" hidden>
+  <img style="width: 70%;" class="zoom" src="thelocationhotel4.jpg">
+  </div>
+  <div id="photo6" hidden>
+  <img style="width: 70%;" class="zoom" src="thelocationhotel5.jpg">
+  </div>
+  <div id="photo7" hidden>
+  <img style="width: 70%;" class="zoom" src="thelocationhotel6.jpg">
+  </div>
+  
+  
+
+  
+  <script>
+  
+            function Function1() {
+              var a = document.getElementById("photo1");
+              if (a.style.display === "block") {
+                a.style.display = "block";
+              } else {
+                a.style.display = "block";
+              }
+                var b = document.getElementById("photo2");
+              if (b.style.display === "block") {
+                b.style.display = "none";
+              } else {
+                b.style.display = "none";
+              }
+                  var c = document.getElementById("photo3");
+              if (c.style.display === "block") {
+                c.style.display = "none";
+              } else {
+                c.style.display = "none";
+              }
+              var d = document.getElementById("photo4");
+              if (d.style.display === "block") {
+                d.style.display = "none";
+              } else {
+                d.style.display = "none";
+              }
+                var e = document.getElementById("photo5");
+              if (e.style.display === "block") {
+                e.style.display = "none";
+              } else {
+                e.style.display = "none";
+              }
+                  var f = document.getElementById("photo6");
+              if (f.style.display === "block") {
+                f.style.display = "none";
+              } else {
+                f.style.display = "none";
+              }
+  var g = document.getElementById("photo7");
+              if (g.style.display === "block") {
+                g.style.display = "none";
+              } else {
+                g.style.display = "none";
+              }
+  
+  
+  
+            }
+            function Function2() {
+              var b = document.getElementById("photo2");
+              if (b.style.display === "block") {
+                b.style.display = "block";
+              } else {
+                b.style.display = "block";
+              }
+                var a = document.getElementById("photo1");
+              if (a.style.display === "block") {
+                a.style.display = "none";
+              } else {
+                a.style.display = "none";
+              }
+                    var c = document.getElementById("photo3");
+              if (c.style.display === "block") {
+                c.style.display = "none";
+              } else {
+                c.style.display = "none";
+              }
+                          var d = document.getElementById("photo4");
+              if (d.style.display === "block") {
+                d.style.display = "none";
+              } else {
+                d.style.display = "none";
+              }
+                var e = document.getElementById("photo5");
+              if (e.style.display === "block") {
+                e.style.display = "none";
+              } else {
+                e.style.display = "none";
+              }
+                  var f = document.getElementById("photo6");
+              if (f.style.display === "block") {
+                f.style.display = "none";
+              } else {
+                f.style.display = "none";
+              }
+  var g = document.getElementById("photo7");
+              if (g.style.display === "block") {
+                g.style.display = "none";
+              } else {
+                g.style.display = "none";
+              }
+  
+  
+            }
+            function Function3() {
+              var c = document.getElementById("photo3");
+              if (c.style.display === "block") {
+                c.style.display = "block";
+              } else {
+                c.style.display = "block";
+              }
+                var a = document.getElementById("photo1");
+              if (a.style.display === "block") {
+                a.style.display = "none";
+              } else {
+                a.style.display = "none";
+              }
+                    var b = document.getElementById("photo2");
+              if (b.style.display === "block") {
+                b.style.display = "none";
+              } else {
+                b.style.display = "none";
+              }
+                          var d = document.getElementById("photo4");
+              if (d.style.display === "block") {
+                d.style.display = "none";
+              } else {
+                d.style.display = "none";
+              }
+                var e = document.getElementById("photo5");
+              if (e.style.display === "block") {
+                e.style.display = "none";
+              } else {
+                e.style.display = "none";
+              }
+                  var f = document.getElementById("photo6");
+              if (f.style.display === "block") {
+                f.style.display = "none";
+              } else {
+                f.style.display = "none";
+              }
+  var g = document.getElementById("photo7");
+              if (g.style.display === "block") {
+                g.style.display = "none";
+              } else {
+                g.style.display = "none";
+              }
+  
+  
+            }
+            
+            function Function4() {
+              var d = document.getElementById("photo4");
+              if (d.style.display === "block") {
+                d.style.display = "block";
+              } else {
+                d.style.display = "block";
+              }
+                var a = document.getElementById("photo1");
+              if (a.style.display === "block") {
+                a.style.display = "none";
+              } else {
+                a.style.display = "none";
+              }
+                  var b = document.getElementById("photo2");
+              if (b.style.display === "block") {
+                b.style.display = "none";
+              } else {
+                b.style.display = "none";
+              }
+              var c = document.getElementById("photo3");
+              if (c.style.display === "block") {
+                c.style.display = "none";
+              } else {
+                c.style.display = "none";
+              }
+                var e = document.getElementById("photo5");
+              if (e.style.display === "block") {
+                e.style.display = "none";
+              } else {
+                e.style.display = "none";
+              }
+                  var f = document.getElementById("photo6");
+              if (f.style.display === "block") {
+                f.style.display = "none";
+              } else {
+                f.style.display = "none";
+              }
+  var g = document.getElementById("photo7");
+              if (g.style.display === "block") {
+                g.style.display = "none";
+              } else {
+                g.style.display = "none";
+              }
+  
+              
+  
+  
+  
+            }
+            function Function5() {
+              var e = document.getElementById("photo5");
+              if (e.style.display === "block") {
+                e.style.display = "block";
+              } else {
+                e.style.display = "block";
+              }
+                var a = document.getElementById("photo1");
+              if (a.style.display === "block") {
+                a.style.display = "none";
+              } else {
+                a.style.display = "none";
+              }
+                    var b = document.getElementById("photo2");
+              if (b.style.display === "block") {
+                b.style.display = "none";
+              } else {
+                b.style.display = "none";
+              }
+                          var c = document.getElementById("photo3");
+              if (c.style.display === "block") {
+                c.style.display = "none";
+              } else {
+                c.style.display = "none";
+              }
+                var d = document.getElementById("photo4");
+              if (d.style.display === "block") {
+                d.style.display = "none";
+              } else {
+                d.style.display = "none";
+              }
+                  var f = document.getElementById("photo6");
+              if (f.style.display === "block") {
+                f.style.display = "none";
+              } else {
+                f.style.display = "none";
+              }
+  var g = document.getElementById("photo7");
+              if (g.style.display === "block") {
+                g.style.display = "none";
+              } else {
+                g.style.display = "none";
+              }
+  
+  
+            }
+            function Function6() {
+              var f = document.getElementById("photo6");
+              if (f.style.display === "block") {
+                f.style.display = "block";
+              } else {
+                f.style.display = "block";
+              }
+                var a = document.getElementById("photo1");
+              if (a.style.display === "block") {
+                a.style.display = "none";
+              } else {
+                a.style.display = "none";
+              }
+                    var b = document.getElementById("photo2");
+              if (b.style.display === "block") {
+                b.style.display = "none";
+              } else {
+                b.style.display = "none";
+              }
+                          var c = document.getElementById("photo3");
+              if (c.style.display === "block") {
+                c.style.display = "none";
+              } else {
+                c.style.display = "none";
+              }
+                var d = document.getElementById("photo4");
+              if (d.style.display === "block") {
+                d.style.display = "none";
+              } else {
+                d.style.display = "none";
+              }
+                  var e = document.getElementById("photo5");
+              if (e.style.display === "block") {
+                e.style.display = "none";
+              } else {
+                e.style.display = "none";
+              }
+  var g = document.getElementById("photo7");
+              if (g.style.display === "block") {
+                g.style.display = "none";
+              } else {
+                g.style.display = "none";
+              }
+  
+  
+            }
+                      function Function7() {
+              var g = document.getElementById("photo7");
+              if (g.style.display === "block") {
+                g.style.display = "block";
+              } else {
+                g.style.display = "block";
+              }
+  
+                var a = document.getElementById("photo1");
+              if (a.style.display === "block") {
+                a.style.display = "none";
+              } else {
+                a.style.display = "none";
+              }
+                    var b = document.getElementById("photo2");
+              if (b.style.display === "block") {
+                b.style.display = "none";
+              } else {
+                b.style.display = "none";
+              }
+                          var c = document.getElementById("photo3");
+              if (c.style.display === "block") {
+                c.style.display = "none";
+              } else {
+                c.style.display = "none";
+              }
+                var d = document.getElementById("photo4");
+              if (d.style.display === "block") {
+                d.style.display = "none";
+              } else {
+                d.style.display = "none";
+              }
+                  var e = document.getElementById("photo5");
+              if (e.style.display === "block") {
+                e.style.display = "none";
+              } else {
+                e.style.display = "none";
+              }
+              var f = document.getElementById("photo6");
+              if (f.style.display === "block") {
+                f.style.display = "none";
+              } else {
+                f.style.display = "none";
+              }
+  
+  
+            }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  </div>
+                  <div class="modal-footer">
+                  </div>
+                  <!--هنا الصور كلها بس صغيره شويه كمان + صوره كبيره واللي يدوس على وحده صغيره تتغير بدال الاولى وتكون هي الكبيره-->
+                  <img onclick="Function1()" style="height: 75px; width: 114px " src="thelocationhotel.jpg">
+                  <img onclick="Function2()" style="height: 75px; width: 114px " src="thelocationhotel1.jpg">
+                  <img onclick="Function3()" style="height: 75px; width: 114px " src="thelocationhotel2.jpg">
+                  <img onclick="Function4()" style="height: 75px; width: 114px " src="thelocationhotel3.jpg">
+                  <img onclick="Function5()" style="height: 75px; width: 114px " src="thelocationhotel4.jpg">
+                  <img onclick="Function6()" style="height: 75px; width: 114px " src="thelocationhotel5.jpg">
+                  <img onclick="Function7()" style="height: 75px; width: 114px " src="thelocationhotel6.jpg">
+              </div></center>
+              </div>
+            </div>
+            <div id="Booking" hidden>
+              <p>Booking page</p>
+              <div><table style="font-size: 15; color: black;"><tr><td>
+                <div class="sb-custom-select">&nbsp;&nbsp;&nbsp;&nbsp;<strong><font size="5">عدد الاشخاص</font></strong>
+        <select name="group_adults" aria-label="عدد الأشخاص البالغين" id="group_adults" data-group-adults-count="">
+            <option value="1">
+              شخص بالغ واحد
+            </option>
+            <option value="2" selected="">
+              شخصان بالغان
+            </option>
+            <option value="3">
+              3 أشخاص بالغين
+            </option>
+            <option value="4">
+              4 أشخاص بالغين
+            </option>
+            <option value="5">
+              5 أشخاص بالغين
+            </option>
+            <option value="6">
+              6 أشخاص بالغين
+            </option>
+        </select>
+      </div></td></tr><tr><td><br>
+      <div class="sb-custom-select">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font size="5">عدد الاطفال</font></strong>&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="group_children" aria-label="عدد الأطفال" id="group_children" data-group-children-count="">
+            <option value="0" selected="">
+                بدون أطفال
+            </option>
+            <option value="1">
+                طفل واحد
+            </option>
+            <option value="2">
+                طفلان
+            </option>
+            <option value="3">
+                3 أطفال
+            </option>
+            <option value="4">
+                4 أطفال
+            </option>
+            <option value="5">
+                5 أطفال
+            </option>
+            <option value="6">
+                6 أطفال
+            </option>
+        </select>
+      </div></td></tr><tr><td><br>
+          <div class="sb-custom-select">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font size="5">عدد الغرف</font></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <select name="no_rooms" id="no_rooms" data-group-rooms-count="" aria-label="عدد الغرف">
+                  <option value="1" selected="">
+                      غرفة واحدة
+                  </option>
+                  <option value="2">
+                      غرفتان
+                  </option>
+                  <option value="3">
+                      3 غرف
+                  </option>
+                  <option value="4">
+                      4 غرف
+                  </option>
+                  <option value="5">
+                      5 غرف
+                  </option>
+                  <option value="6">
+                      6 غرف
+                  </option>
+                  <option value="7">
+                      7 غرف
+                  </option>
+                  <option value="8">
+                      8 غرف
+                  </option>
+                  <option value="9">
+                      9 غرف
+                  </option>
+                  <option value="10">
+                      10 غرف
+                  </option>
+                  <option value="11">
+                      11 غرفة
+                  </option>
+                  <option value="12">
+                      12 غرفة
+                  </option>
+          </select>
+          </div></td></tr>
+          <tr><td id="remove">
+            <script>
+              function removeFunction() {
+                var myobj = document.getElementById("remove");
+                myobj.remove();
+              }
+              </script>
+            <br>
+             <strong><font size="5">خدمات ترفيهية للاطفال اليوم ب 50ج تتم اضافتها على حسب ايام اقامتك اضغط للحجز او الحذف</font></strong><br><button onclick="pupFunction()" style="background-color: #4CAF50; color: white; border: 0px; font-size: 20px; border-radius: 50%;">✔</button>
+             
+             <style>
+              .alert {
+                padding: 20px;
+                background-color: #4CAF50;
+                color: white;
+              }
+              
+              
+              </style>
+             <p id="pup"></p>
+
+<script>
+function pupFunction() {
+  document.getElementById("pup").innerHTML = "<div class='alert'> <strong><font size='5'>تم بنجاح اضافته للحجز</font></strong></div>";
+}
+</script>
+             
+             
+            <button onclick="removeFunction()" style="background-color: #f44336; color: white; border: 0px; font-size: 20px; border-radius: 50%;">✖</button>
+          </td></tr>
+          <tr><td>
+                        <script>
+                $(document).ready(function(){
+                  $(".checkout").on("keyup", ".quantity", function(){
+                    var price = +$(".price").data("price");
+                    var quantity = +$(this).val();
+                    $("#total").text("$" + price * quantity);
+                  })
+                })
+                    </script>
+                
+                
+                <div class="checkout">
+                    <p class="price" data-price="300" hidden>300 per Juice</p><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font size="5">Rooms</font></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input style="font-weight: bold;" type="text" class="quantity" value="1" width="50px 50px">
+                      <p class="total">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font size="5">Total: <span id="total">300</span></font></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </div>
+        </td></tr>
+        <tr><td><br>&nbsp;&nbsp;&nbsp;
+          <style>
+            .alert {
+              padding: 20px;
+              background-color: #4CAF50;
+              color: white;
+            }
+            
+            
+            </style>
+            
+            
+            <button style="background-color: #4CAF50; color: white; border-radius: 5px; width: auto; font-weight: bold; font-size: 20px;" onclick="popFunction()">الانتهاء من الحجز</button>
+            
+            <p id="pop"></p>
+            
+            <script>
+            function popFunction() {
+              document.getElementById("pop").innerHTML = "<div class='alert'> <strong>تم الحجز بنجاح شكرا سيد/ة ورقم الغرفه<div id='demoo'></div></strong></div> ";
+              document.getElementById('demoo').innerHTML=Math.floor(Math.random() * 10);
+            }
+            </script>
+        </td></tr>
+      </table></div>
+
+
+            </div></div>
+              
+            
+            </div>
+
+              <br>
+
+            <div>
+              <style>
+                    article {
+      float: left;
+      padding: 20px;
+      width: 70%;
+      height: auto; /* only for demonstration, should be removed */
+      color: #333333;
+    }
+
+    
+                #div2 {
+        width: 70%;
+        padding: 50px 0;
+        text-align: center;
+        background-color: white;
+        color: black;
+        margin-top: 20px;
+        border-radius: 20px;
+      }
+              </style>
+            <div id="div2">
+              
+              
+<div onclick="myFunction()" id="demo" style="width: 100%; text-align: center; font-weight: bold; font-size: 20px; color: rgb(167, 58, 218);"><i class="fa fa-angle-double-down" style="font-size:24px"></i> اضغط لعرض اسباب اختيار The location Hotel</div>
+
+
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "<div onclick='myFunction()' id='demo' style='width: 100%; text-align: center; font-weight: bold; font-size: 20px; color: rgb(167, 58, 218);'><i class='fa fa-angle-double-down' style='font-size:24px'></i> اسباب اختيار The location Hotel</div><table style='width: 100%; text-align: center; font-weight: bold; font-size: 20px; color: blueviolet;'><tr style='height: 50%;'><td style='width: 50%;'>&nbsp;&nbsp;&nbsp;&nbsp;✔ أسعار لا تقارن!</td><td style='width: 50%;'>✔ قم بإدارة حجوزاتك من خلال الإنترنت</td></tr><tr style='height: 50%;'><td style='width: 50%;'>&nbsp;&nbsp;&nbsp;&nbsp;✔ لأنهم يتحدثون 4 لغات</td><td style='width: 50%;'>✔ الحجز آمن</td></tr></table>";
+}
+</script>
+
+
+
+            </div>
+          </div>
+          </article>
+
+          </section>
+
+        <script>
+          function hpFunction() {
+            var x = document.getElementById("HotelPage");
+            if (x.style.display === "block") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "block";
+            }
+              var y = document.getElementById("Photos");
+            if (y.style.display === "block") {
+              y.style.display = "none";
+            } else {
+              y.style.display = "none";
+            }
+                var z = document.getElementById("Booking");
+            if (y.style.display === "block") {
+              z.style.display = "none";
+            } else {
+              z.style.display = "none";
+            }
+
+            
+
+
+
+          }
+          function pFunction() {
+            var y = document.getElementById("Photos");
+            if (y.style.display === "block") {
+              y.style.display = "block";
+            } else {
+              y.style.display = "block";
+            }
+              var x = document.getElementById("HotelPage");
+            if (x.style.display === "block") {
+              x.style.display = "none";
+            } else {
+              x.style.display = "none";
+            }
+                  var z = document.getElementById("Booking");
+            if (z.style.display === "block") {
+              z.style.display = "none";
+            } else {
+              z.style.display = "none";
+            }
+
+          }
+          function bFunction() {
+            var z = document.getElementById("Booking");
+            if (z.style.display === "block") {
+              z.style.display = "block";
+            } else {
+              z.style.display = "block";
+            }
+              var x = document.getElementById("HotelPage");
+            if (x.style.display === "block") {
+              x.style.display = "none";
+            } else {
+              x.style.display = "none";
+            }
+                  var y = document.getElementById("Photos");
+            if (y.style.display === "block") {
+              y.style.display = "none";
+            } else {
+              y.style.display = "none";
+            }
+
+          }
+          </script>
+
+
+
+          <br>
+ 
+
+        <style>
+
+    .modal-body {padding: 2px 16px;}
+
+    .modal-footer {
+      padding: 2px 16px;
+      background-color: black;
+      color: white;
+    }
+
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      animation-name: animatetop;
+      animation-duration: 0.4s
+    }
+
+    @keyframes animatetop {
+      from {top: -300px; opacity: 0}
+      to {top: 0; opacity: 1}
+    }
+
+
+            .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #faf4fc;
+      margin: 3% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 75%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+        </style>
+        <script>
+            var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+        </script>
+
+  </body>
+</html>
